@@ -3,9 +3,9 @@ import './App.css';
 
 function App() {
 
-  useEffect(() => {
-    tg.ready()
-  }, [])
+  // useEffect(() => {
+  //   tg.ready()
+  // }, [])
 
   return (
     <div className="App">
