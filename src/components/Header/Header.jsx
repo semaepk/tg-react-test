@@ -3,21 +3,17 @@ import Button from "../Button/Button";
 import {useTelegram} from "../../hooks/useTelegram";
 import './Header.css';
 
-const tg = window.Telegram.WebApp;
-const onClose = () => {
-  tg.close()
-}
-
 const Header = () => {
+    const {data, dataUnsafe, onClose} = useTelegram();
 
     return (
         <div className={'header'}>
             <Button onClick={onClose}>Закрыть</Button>
             <span className={'username'}>
-                {tg.initDataUnsafe}
+                {data}
             </span>
             <span className={'username'}>
-                {tg.initData}
+                {dataUnsafe}
             </span>
         </div>
     );
