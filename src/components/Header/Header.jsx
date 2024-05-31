@@ -23,18 +23,7 @@ const Header = () => {
     <div className={'header'}>
       <Button onClick={onClose}>Закрыть</Button>
       <span className={'username'}>
-        {[id,
-          user,
-          queryId,
-          first_name,
-          last_name,
-          username,
-          language_code,
-          allows_write_to_pm,
-          photo_url,
-          auth_date,
-          is_bot,
-          hash]}
+        {id}
       </span>
     </div>
   );
