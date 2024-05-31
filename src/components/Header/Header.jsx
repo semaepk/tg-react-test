@@ -5,6 +5,7 @@ import './Header.css';
 
 const Header = () => {
   const {
+    id,
     user,
     queryId,
     first_name,
@@ -12,7 +13,9 @@ const Header = () => {
     username,
     language_code,
     allows_write_to_pm,
+    photo_url,
     auth_date,
+    is_bot,
     hash,
     onClose } = useTelegram();
 
@@ -20,14 +23,17 @@ const Header = () => {
     <div className={'header'}>
       <Button onClick={onClose}>Закрыть</Button>
       <span className={'username'}>
-        {[user,
+        {[id,
+          user,
           queryId,
           first_name,
           last_name,
           username,
           language_code,
           allows_write_to_pm,
+          photo_url,
           auth_date,
+          is_bot,
           hash]}
       </span>
     </div>
