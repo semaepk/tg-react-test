@@ -4,13 +4,31 @@ import { useTelegram } from "../../hooks/useTelegram";
 import './Header.css';
 
 const Header = () => {
-  const { user, queryId, onClose } = useTelegram();
+  const {
+    user,
+    queryId,
+    first_name,
+    last_name,
+    username,
+    language_code,
+    allows_write_to_pm,
+    auth_date,
+    hash,
+    onClose } = useTelegram();
 
   return (
     <div className={'header'}>
       <Button onClick={onClose}>Закрыть</Button>
       <span className={'username'}>
-        {user.username}
+        {[user,
+          queryId,
+          first_name,
+          last_name,
+          username,
+          language_code,
+          allows_write_to_pm,
+          auth_date,
+          hash]}
       </span>
     </div>
   );
