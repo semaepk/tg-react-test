@@ -17,6 +17,7 @@ const Header = () => {
     auth_date,
     is_bot,
     hash,
+    initData,
     onClose } = useTelegram();
 
   return (
@@ -33,7 +34,8 @@ const Header = () => {
           ' photo_url=',photo_url,
           ' auth_date=',auth_date,
           ' is_bot=',is_bot,
-          ' hash=',hash]}
+          '/ hash=', hash,
+          ' initData=', initData]}
       </span>
     </div>
   );

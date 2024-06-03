@@ -30,5 +30,6 @@ export function useTelegram() {
         auth_date: tg.initDataUnsafe?.auth_date,
         is_bot: tg.initDataUnsafe?.user?.is_bot,
         hash: tg.initDataUnsafe?.hash,
+        initData: tg.initData
     }
 }
