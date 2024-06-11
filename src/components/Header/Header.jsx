@@ -1,4 +1,4 @@
-import React , { useState, useEffect } from 'react';
+import React from 'react';
 import Button from "../Button/Button";
 import { useTelegram } from "../../hooks/useTelegram";
 import './Header.css';
@@ -7,15 +7,8 @@ const Header = () => {
   const {
     id,
     username,
+    startParam,
     onClose } = useTelegram();
-
-    const [refId, setRefId] = useState(null);
-
-    useEffect(() => {
-      const params = new URLSearchParams(window.location.search);
-      const refIdParam = params.get('ref_id');
-      setRefId(refIdParam);
-    }, []);
 
   return (
     <div className={'header'}>
@@ -23,7 +16,7 @@ const Header = () => {
       <span className={'username'}>
         {['id=', id,
           ' username=', username,
-          ' ref_id=', refId]}
+          ' startParam=', startParam]}
       </span>
     </div>
   );

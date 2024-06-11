@@ -1,4 +1,5 @@
 const tg = window.Telegram.WebApp;
+const startParam = window.Telegram.WebApp.initDataUnsafe.start_param
 
 export function useTelegram() {
 
@@ -19,6 +20,7 @@ export function useTelegram() {
         onToggleButton,
         tg,
         id: tg.initDataUnsafe?.user?.id,
-        username: tg.initDataUnsafe?.user?.username
+        username: tg.initDataUnsafe?.user?.username,
+        startParam
     }
 }
