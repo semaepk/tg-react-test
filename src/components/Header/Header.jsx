@@ -1,12 +1,7 @@
-import React from 'react';
+import React , { useState, useEffect } from 'react';
 import Button from "../Button/Button";
 import { useTelegram } from "../../hooks/useTelegram";
 import './Header.css';
-import { useLocation } from 'react-router-dom';
-
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
 
 const Header = () => {
   const {
@@ -14,8 +9,13 @@ const Header = () => {
     username,
     onClose } = useTelegram();
 
-  let query = useQuery();
-  let refId = query.get('ref_id');
+    const [refId, setRefId] = useState(null);
+
+    useEffect(() => {
+      const params = new URLSearchParams(window.location.search);
+      const refIdParam = params.get('ref_id');
+      setRefId(refIdParam);
+    }, []);
 
   return (
     <div className={'header'}>
